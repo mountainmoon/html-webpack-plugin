@@ -72,6 +72,7 @@ Allowed values are as follows:
 - `template`: A html template (supports [blueimp templates](https://github.com/blueimp/JavaScript-Templates)).
 - `templateContent`: A html string or a function returning the html  (supports [blueimp templates](https://github.com/blueimp/JavaScript-Templates)).  
 - `inject`: `true | 'head' | 'body' | false` Inject all assets into the given `template` or `templateContent` - When passing `true` or `'body'` all javascript resources will be placed at the bottom of the body element. `'head'` will place the scripts in the head element.
+- `plainString`: `true | false` Disables [blueimp templates](https://github.com/blueimp/JavaScript-Templates) if passing `true` with truthy `inject`. Defaults to `false`.
 - `favicon`: Adds the given favicon path to the output html.
 - `minify`: `{...} | false` Pass a [html-minifier](https://github.com/kangax/html-minifier#options-quick-reference) options object to minify the output.
 - `hash`: `true | false` if `true` then append a unique webpack compilation hash to all

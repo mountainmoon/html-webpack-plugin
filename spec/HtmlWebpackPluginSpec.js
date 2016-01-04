@@ -1,6 +1,6 @@
 'use strict';
 
-// Workaround for css-loader issue 
+// Workaround for css-loader issue
 // https://github.com/webpack/css-loader/issues/144
 if (!global.Promise) {
   require('es6-promise').polyfill();
@@ -469,6 +469,17 @@ describe('HtmlWebpackPlugin', function() {
       },
       plugins: [new HtmlWebpackPlugin({title: 'My Cool App'})]
     }, ['<title>My Cool App</title>'], null, done);
+  });
+
+  it('disables blueimp-tmpl if `plainString` is true and `inject` is truthy', function (done) {
+    testHtmlPlugin({
+      entry: path.join(__dirname, 'fixtures/index.js'),
+      output: {
+        path: OUTPUT_DIR,
+        filename: 'index_bundle.js'
+      },
+      plugins: [new HtmlWebpackPlugin({inject: true, plainString: true})]
+    }, ["<title>{%=o.htmlWebpackPlugin.options.title || 'Webpack App'%}</title>", '<script src="index_bundle.js'], null, done);
   });
 
   it('allows you to configure the output filename', function(done) {

@@ -120,7 +120,7 @@ HtmlWebpackPlugin.prototype.emitHtml = function(compilation, htmlTemplateContent
   var html;
   // blueimp-tmpl processing
   try {
-    html = tmpl(htmlTemplateContent, templateParams);
+    html = this.options.plainString && this.options.inject ? htmlTemplateContent : tmpl(htmlTemplateContent, templateParams);
   } catch(e) {
     return Promise.reject(new Error('HtmlWebpackPlugin: template error ' + e));
   }
@@ -174,7 +174,7 @@ HtmlWebpackPlugin.prototype.addFileToAssets = function(compilation, filename) {
  * Helper to sort chunks
  */
 HtmlWebpackPlugin.prototype.sortChunks = function(chunks, sortMode) {
-  // Sort mode auto by default: 
+  // Sort mode auto by default:
   if (typeof sortMode === 'undefined' || sortMode === 'auto') {
     return chunks.sort(function orderEntryLast(a, b) {
       if (a.entry !== b.entry) {

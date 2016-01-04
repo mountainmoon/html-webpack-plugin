@@ -1,7 +1,7 @@
 {
-  "name": "html-webpack-plugin",
+  "name": "xw-html-webpack-plugin",
   "version": "1.7.0",
-  "description": "Simplifies creation of HTML files to serve your webpack bundles",
+  "description": "Simplifies creation of HTML files to serve your webpack bundles(optionally to diable the blueimp-tmpl)",
   "main": "index.js",
   "files": [
     "index.js",
@@ -14,7 +14,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/ampedandwired/html-webpack-plugin.git"
+    "url": "https://github.com/mountainmoon/html-webpack-plugin.git"
   },
   "keywords": [
     "webpack",
@@ -22,12 +22,12 @@
     "html",
     "generate"
   ],
-  "author": "Charles Blaxland <charles.blaxland@gmail.com> (https://github.com/ampedandwired)",
+  "author": "mountainmoon <yuekec@gmail.com>, Charles Blaxland <charles.blaxland@gmail.com> (https://github.com/ampedandwired)",
   "license": "MIT",
   "bugs": {
     "url": "https://github.com/ampedandwired/html-webpack-plugin/issues"
   },
-  "homepage": "https://github.com/ampedandwired/html-webpack-plugin",
+  "homepage": "https://github.com/mountainmoon/html-webpack-plugin",
   "devDependencies": {
     "css-loader": "^0.23.0",
     "es6-promise": "^3.0.2",
